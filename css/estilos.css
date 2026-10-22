@@ -1,5 +1,82 @@
+:root {
+    --ciruela: #2b1a2f;
+    --magnolia: #b8325f;
+    --magnolia-oscuro: #96264b;
+    --lila: #ece6f2;
+    --salvia: #b7c4b0;
+    --perla: #fbf9fc;
+    --texto: #2b1a2f;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
 body {
-    font-family: Arial;
-    text-align: center;
-    margin-top: 100px;
+    font-family: "Figtree", system-ui, Arial, sans-serif;
+    background: var(--perla);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+.titulo, .marca {
+    font-family: "Bodoni Moda", Georgia, serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+/* Navegación */
+.barra { background: rgba(251, 249, 252, 0.94); border-bottom: 1px solid var(--lila); }
+.marca { font-size: 1.5rem; color: var(--ciruela); }
+.nav-link { color: var(--ciruela); font-weight: 500; }
+.nav-link:hover { color: var(--magnolia); }
+
+/* Botones */
+.btn-magnolia { background: var(--magnolia); border-color: var(--magnolia); color: #fff; }
+.btn-magnolia:hover, .btn-magnolia:focus { background: var(--magnolia-oscuro); border-color: var(--magnolia-oscuro); color: #fff; }
+.btn-outline-magnolia { border: 2px solid var(--ciruela); color: var(--ciruela); }
+.btn-outline-magnolia:hover { background: var(--ciruela); color: #fff; }
+.btn-filtro { border: 1px solid var(--ciruela); color: var(--ciruela); background: transparent; }
+.btn-filtro:hover { background: var(--lila); }
+.btn-filtro.active { background: var(--ciruela); color: #fff; border-color: var(--ciruela); }
+.btn:focus-visible, .form-control:focus, .form-select:focus { outline: 3px solid var(--magnolia); outline-offset: 2px; box-shadow: none; }
+
+/* Portada */
+.portada { padding: 5rem 0 4rem; background: var(--lila); }
+.portada .titulo { color: var(--ciruela); }
+
+.collage .bloque {
+    min-height: 190px;
+    border-radius: 120px 120px 12px 12px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .25rem;
+    color: var(--ciruela);
+}
+.collage .bloque span { font-size: 3.2rem; }
+.collage .bloque small { font-weight: 600; }
+.collage .col-5 .bloque { border-radius: 12px 12px 120px 120px; }
+.b1 { background: #e9a3ba; }
+.b2 { background: var(--salvia); }
+.b3 { background: #c9b6dd; }
+.b4 { background: #f1d3a6; }
+
+/* Secciones */
+.seccion { padding: 4.5rem 0; }
+.franja { background: var(--ciruela); color: #f3ecf6; }
+.franja .titulo { color: #fff; }
+
+/* Productos */
+.tarjeta { border: 1px solid var(--lila); border-radius: 12px; overflow: hidden; background: #fff; height: 100%; }
+.tarjeta .muestra {
+    height: 190px; display: flex; align-items: center; justify-content: center; font-size: 4rem;
+}
+.tarjeta .card-body { display: flex; flex-direction: column; gap: .35rem; }
+.tarjeta .nombre { font-weight: 600; margin: 0; }
+.tarjeta .detalle { color: #6d5a73; font-size: .95rem; margin: 0; }
+.tarjeta .precio { font-weight: 600; font-size: 1.15rem; }
+
+/* Formulario y pie */
+.form-control, .form-select { border-color: #cdbfd6; }
+.pie { background: var(--ciruela); color: #d8cbe0; padding: 1.5rem 0; font-size: .95rem; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
 }

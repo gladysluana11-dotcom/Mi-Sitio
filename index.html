@@ -1,22 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GIT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Casa Magnolia | Ropa femenina</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,700;1,500&family=Figtree:wght@400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-  <h1>Mi sitio web actualizado</h1>
 
-  <p>Proyecto desarrollado en Windows.</p>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg sticky-top barra">
+    <div class="container">
+      <a class="navbar-brand marca" href="#inicio">Casa Luana</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu"
+        aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#beneficios">Compra fácil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item">
+            <span class="btn btn-sm btn-magnolia ms-lg-2" id="carrito" role="status">Pedido: <strong
+                id="contador">0</strong></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <button onclick="saludar()">Saludar</button>
+  <!-- Portada -->
+  <header id="inicio" class="portada">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h1 class="display-3 titulo">Prendas para tus días largos y tus noches cortas</h1>
+          <p class="lead mt-4 mb-4">Vestidos, blusas, pantalones y accesorios en tallas S a XL. Elige, escríbenos por
+            WhatsApp y recibe tu pedido en casa.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#catalogo" class="btn btn-magnolia btn-lg">Ver catálogo</a>
+            <a href="#contacto" class="btn btn-outline-magnolia btn-lg">Hacer un pedido</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="row g-3 collage">
+            <div class="col-7">
+              <div class="bloque b1"><span>👗</span><small>Vestidos</small></div>
+            </div>
+            <div class="col-5">
+              <div class="bloque b2"><span>👚</span><small>Blusas</small></div>
+            </div>
+            <div class="col-5">
+              <div class="bloque b3"><span>👖</span><small>Pantalones</small></div>
+            </div>
+            <div class="col-7">
+              <div class="bloque b4"><span>👜</span><small>Accesorios</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <script src="js/script.js"></script>
+  <!-- Catálogo -->
+  <main>
+    <section id="catalogo" class="seccion">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
+          <h2 class="titulo">Catálogo de la temporada</h2>
+          <div class="btn-group flex-wrap" role="group" aria-label="Filtrar por categoría" id="filtros">
+            <button type="button" class="btn btn-filtro active" data-cat="todos">Todo</button>
+            <button type="button" class="btn btn-filtro" data-cat="vestidos">Vestidos</button>
+            <button type="button" class="btn btn-filtro" data-cat="blusas">Blusas</button>
+            <button type="button" class="btn btn-filtro" data-cat="pantalones">Pantalones</button>
+            <button type="button" class="btn btn-filtro" data-cat="accesorios">Accesorios</button>
+          </div>
+        </div>
+        <div class="row g-4" id="productos"></div>
+      </div>
+    </section>
 
+    <!-- Beneficios -->
+    <section id="beneficios" class="seccion franja">
+      <div class="container">
+        <h2 class="titulo mb-4">Comprar aquí es fácil</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h3 class="h5">Cambio de talla</h3>
+            <p>Si no te queda, lo cambiamos dentro de los 7 días con la etiqueta puesta.</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h5">Envíos a todo Lima</h3>
+            <p>Coordinamos la entrega por moto o agencia. Tú eliges la que te quede mejor.</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="h5">Pago como prefieras</h3>
+            <p>Yape, Plin, transferencia o contra entrega en zonas seleccionadas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="seccion">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-5">
+            <h2 class="titulo">Cuéntanos qué te gustó</h2>
+            <p class="mt-3">Escríbenos con el nombre de la prenda y tu talla. Respondemos de lunes a sábado, de 9 a. m.
+              a 7 p. m.</p>
+            <p class="mb-1"><strong>WhatsApp:</strong> 999 999 999</p>
+            <p><strong>Correo:</strong> hola@casamagnolia.pe</p>
+          </div>
+          <div class="col-lg-7">
+            <form id="formulario" class="row g-3" novalidate>
+              <div class="col-md-6">
+                <label for="nombre" class="form-label">Tu nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+              </div>
+              <div class="col-md-6">
+                <label for="talla" class="form-label">Talla</label>
+                <select class="form-select" id="talla">
+                  <option>S</option>
+                  <option>M</option>
+                  <option>L</option>
+                  <option>XL</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label for="mensaje" class="form-label">¿Qué prenda quieres?</label>
+                <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-magnolia btn-lg">Enviar pedido</button>
+              </div>
+            </form>
+            <div id="respuesta" class="alert alert-success mt-3 d-none" role="alert"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>Casa Magnolia, ropa femenina</span>
+      <span>Proyecto del Laboratorio 07, desplegado con Git y Apache</span>
+    </div>
+  </footer>
+
+  <!-- Aviso al agregar una prenda -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="aviso" class="toast align-items-center text-bg-dark border-0" role="status" aria-live="polite"
+      aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="avisoTexto"></div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Cerrar"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>
